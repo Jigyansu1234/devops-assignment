@@ -8,22 +8,21 @@ This project demonstrates a microservices setup with:
 
 ---
 
-## 📦 Project Structure
+  devops-assignment/
+  ├── docker-compose.yml
+  ├── nginx
+  │   ├── Dockerfile
+  │   └── nginx.conf
+  ├── service_1
+  │   ├── Dockerfile
+  │   └── main.go
+  ├── service_2
+  │   ├── Dockerfile
+  │   ├── app.py
+  │   ├── pyproject.toml
+  │   └── uv.lock
+  └── README.md
 
-devops-assignment/
-├── nginx
-│   ├── Dockerfile
-│   └── nginx.conf
-├── service_1
-│   ├── Dockerfile
-│   └── main.go
-├── service_2
-│   ├── Dockerfile
-│   ├── app.py
-│   ├── pyproject.toml
-│   └── uv.lock
-└── README.md
-├── docker-compose.yml
 
 
 
@@ -55,16 +54,19 @@ Route	      Target Service	        Port Mapped
 
 Example URLs:
 http://54.144.246.133/8001/hello
+
 http://54.144.246.133/8002/ping
 
 YOUR_EC2_PUBLIC_IP with your real IP (e.g., http://54.144.246.133):
 
 http://YOUR_EC2_PUBLIC_IP/service1/hello
+
 http://YOUR_EC2_PUBLIC_IP/service2/ping
 
 
 
 Health Checks (Bonus ✅)
+
 Both services expose a /ping endpoint for health monitoring. These are configured using Docker health checks:
 
 Golang service → /ping
